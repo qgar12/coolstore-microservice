@@ -82,7 +82,7 @@ parameters:
 - displayName: GitHub Account
   name: GITHUB_ACCOUNT
   required: true
-  value: jbossdemocentral
+  value: qgar12
 - displayName: Git Branch/Tag
   name: GITHUB_REF
   required: true

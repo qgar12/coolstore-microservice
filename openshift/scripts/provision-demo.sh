@@ -177,7 +177,7 @@ PRJ_COOLSTORE_PROD=coolstore-prod-$PRJ_SUFFIX
 PRJ_DEVELOPER=developer-$PRJ_SUFFIX
 
 # config
-GITHUB_ACCOUNT=${GITHUB_ACCOUNT:-jbossdemocentral}
+GITHUB_ACCOUNT=${GITHUB_ACCOUNT:-qgar12}
 GITHUB_REF=${GITHUB_REF:-stable-ocp-3.11}
 GITHUB_URI=https://github.com/$GITHUB_ACCOUNT/coolstore-microservice.git
 COOLSTORE_IMAGES_NAMESPACE=${COOLSTORE_IMAGES_NAMESPACE:-coolstore-builds}
@@ -345,7 +345,7 @@ function add_service_templates_to_projects() {
   local _TEMPLATE=https://raw.githubusercontent.com/$GITHUB_ACCOUNT/coolstore-microservice/$GITHUB_REF/openshift/templates/inventory-template.json
   curl -sL $_TEMPLATE | tr -d '\n' | tr -s '[:space:]' \
     | sed "s|\"MAVEN_MIRROR_URL\", \"value\": \"\"|\"MAVEN_MIRROR_URL\", \"value\": \"$MAVEN_MIRROR_URL\"|g" \
-    | sed "s|\"https://github.com/jbossdemocentral/coolstore-microservice\"|\"http://$GOGS_ROUTE/$GOGS_USER/coolstore-microservice.git\"|g" \
+    | sed "s|\"https://github.com/qgar12/coolstore-microservice\"|\"http://$GOGS_ROUTE/$GOGS_USER/coolstore-microservice.git\"|g" \
     | oc $ARG_OC_OP create -f - -n ${PRJ_DEVELOPER[0]}
 }
 
